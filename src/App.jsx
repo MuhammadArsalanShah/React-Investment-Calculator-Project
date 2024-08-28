@@ -14,6 +14,8 @@ const inputData = {
 
 function App() {
   const [userInput, setUserInput] = useState(inputData);
+
+  const isValidDuration = userInput.duration >= 1;
   
   function handleChange(key, newValue) {
 
@@ -61,8 +63,9 @@ function App() {
         </InputGroup>
       </section>
 
-      <Table userData={userInput} />
-      
+      {!isValidDuration && <p className="center">Please Enter a Duration Greater than Zero!</p>}
+      {isValidDuration && <Table userData={userInput} />}
+
     </main>
   );
 }
