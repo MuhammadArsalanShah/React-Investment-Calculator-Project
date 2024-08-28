@@ -6,13 +6,13 @@ function App() {
     <main>
       <section id="user-input">
         <InputGroup>
-          <Input title="initial investment" investmentKey="initialInvestment" />
-          <Input title="annual investment" investmentKey="annualInvestment"/>
+          <Input title="initial investment" inputIdentifier="initialInvestment" />
+          <Input title="annual investment" inputIdentifier="annualInvestment"/>
         </InputGroup>
 
         <InputGroup>
-          <Input title="expected return" investmentKey="expectedReturn"/>
-          <Input title="duration" investmentKey="duration"/>
+          <Input title="expected return" inputIdentifier="expectedReturn"/>
+          <Input title="duration" inputIdentifier="duration"/>
         </InputGroup>
       </section>
     </main>

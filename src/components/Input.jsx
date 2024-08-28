@@ -1,29 +1,40 @@
 import { useState } from "react";
 
 const inputData = {
-  initialInvestment: 100,
+  initialInvestment: 1000,
   annualInvestment: 300,
   expectedReturn: 5,
   duration: 3
 }
 
-export default function Input({ title, investmentKey }) {
-  const [numValue, setNumValue] = useState(inputData);
+export default function Input({ title, inputIdentifier }) {
+  const [userInput, setUserInput] = useState(inputData);
 
-  function handleChange(event) {
-    setNumValue(event.target.value)
+  function handleChange(key, newValue) {
+   
+    console.log(typeof newValue)
+
+    setUserInput(prevInput => {
+      return {
+        ...prevInput,
+        [key]: newValue
+
+      }
+    })
+
+    console.log('user input is:',userInput);
   }
 
-  console.log(investmentKey)
+  
 
   return (
     <p>
       <label htmlFor="">{title}</label>
       <input
         type="number"
-        value={numValue[investmentKey]}
+        value={userInput[inputIdentifier]}
         required
-        onChange={handleChange}
+        onChange={(event) => handleChange(inputIdentifier, event.target.value)}
       />
     </p>
   );
