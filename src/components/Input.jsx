@@ -1,4 +1,9 @@
-export default function Input({ title, userInputData, inputIdentifier, onChangeValue }) {
+export default function Input({
+  title,
+  userInputData,
+  inputIdentifier,
+  onChangeValue,
+}) {
   return (
     <p>
       <label htmlFor="">{title}</label>

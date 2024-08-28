@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import InputGroup from "./components/InputGroup.jsx";
 import Input from "./components/Input.jsx";
 import Table from "./components/Table.jsx";
@@ -16,9 +15,8 @@ function App() {
   const [userInput, setUserInput] = useState(inputData);
 
   const isValidDuration = userInput.duration >= 1;
-  
-  function handleChange(key, newValue) {
 
+  function handleChange(key, newValue) {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
@@ -63,9 +61,10 @@ function App() {
         </InputGroup>
       </section>
 
-      {!isValidDuration && <p className="center">Please Enter a Duration Greater than Zero!</p>}
+      {!isValidDuration && (
+        <p className="center">Please Enter a Duration Greater than Zero!</p>
+      )}
       {isValidDuration && <Table userData={userInput} />}
-
     </main>
   );
 }
