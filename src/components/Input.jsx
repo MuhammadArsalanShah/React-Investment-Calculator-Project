@@ -1,4 +1,4 @@
-export default function Input({ title, userInputData, inputIdentifier, onValueChange }) {
+export default function Input({ title, userInputData, inputIdentifier, onChangeValue }) {
   return (
     <p>
       <label htmlFor="">{title}</label>
@@ -6,7 +6,7 @@ export default function Input({ title, userInputData, inputIdentifier, onValueCh
         type="number"
         value={userInputData}
         required
-        onChange={(event) => onValueChange(inputIdentifier, event.target.value)}
+        onChange={(event) => onChangeValue(inputIdentifier, event.target.value)}
       />
     </p>
   );
